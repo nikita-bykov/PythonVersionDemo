@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 
 project(Demo VERSION 0.0.1 LANGUAGES C CXX)
 set(Python_FIND_REGISTRY "LAST")
-find_package(Python3 COMPONENTS Interpreter Development)	# find Python interpreter and library
+find_package(Python Python3 COMPONENTS Interpreter Development)	# find Python interpreter and library
 
 message(STATUS "Python3_EXECUTABLE = ${Python3_EXECUTABLE}")
 message(STATUS "Python3_STDLIB     = ${Python3_STDLIB}")
