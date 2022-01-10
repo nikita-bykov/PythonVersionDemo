@@ -4,6 +4,9 @@ project(Demo VERSION 0.0.1 LANGUAGES C CXX)
 
 find_package(Python3 COMPONENTS Interpreter Development)	# find Python interpreter and library
 
+if (POLICY CMP0094)  # https://cmake.org/cmake/help/latest/policy/CMP0094.html
+  cmake_policy(SET CMP0094 NEW)  # FindPython should return the first matching Python
+endif ()
 if (NOT DEFINED Python_FIND_REGISTRY)
   set(Python_FIND_REGISTRY "LAST")
 endif ()
