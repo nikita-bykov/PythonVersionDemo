@@ -3,20 +3,7 @@ cmake_minimum_required(VERSION 3.16)
 project(Demo VERSION 0.0.1 LANGUAGES C CXX)
 
 find_package(Python3 COMPONENTS Interpreter Development)	# find Python interpreter and library
-
-if (POLICY CMP0094)  # https://cmake.org/cmake/help/latest/policy/CMP0094.html
-  cmake_policy(SET CMP0094 NEW)  # FindPython should return the first matching Python
-endif ()
-if (NOT DEFINED Python_FIND_REGISTRY)
-  set(Python_FIND_REGISTRY "LAST")
-endif ()
-if (NOT DEFINED Python_FIND_FRAMEWORK)
-  set(Python_FIND_FRAMEWORK "LAST")
-endif ()
-find_package(Python
-        REQUIRED COMPONENTS Interpreter
-        OPTIONAL_COMPONENTS Development)
-
+set(Python_FIND_REGISTRY "LAST")
 message(STATUS "Python3_EXECUTABLE = ${Python3_EXECUTABLE}")
 message(STATUS "Python3_STDLIB     = ${Python3_STDLIB}")
 message(STATUS "Python3_STDARCH    = ${Python3_STDARCH}")
