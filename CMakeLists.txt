@@ -2,9 +2,6 @@ cmake_minimum_required(VERSION 3.16)
 
 project(Demo VERSION 0.0.1 LANGUAGES C CXX)
 
-set(Python3_FIND_REGISTRY "FIRST")
-set(Python_FIND_REGISTRY "FIRST")
-
 find_package(Python3 COMPONENTS Interpreter Development)	# find Python interpreter and library
 find_package(Python COMPONENTS Interpreter Development)
 
